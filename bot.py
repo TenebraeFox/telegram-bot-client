@@ -44,7 +44,7 @@ class TelegramBot:
                     print(f"Error saving message: {e}")
 
     async def start(self):
-        await self.dp.start_polling(self.bot)
+        await self.dp.start_polling(self.bot, handle_signals=False)
 
     async def stop(self):
         await self.bot.session.close()
